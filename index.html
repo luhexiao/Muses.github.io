@@ -2,8 +2,8 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>TRELLIS: Structured 3D Latents for Scalable and Versatile 3D Generation</title>
-        <link rel="icon" href="favicon.png">
+        <title>MorphAny3D: Unleashing the Power of Structured Latent in 3D Morphing</title>
+        <link rel="icon" href="nju.png">
         <link rel="stylesheet" href="fonts/avenir-next/stylesheet.css">
         <link rel="stylesheet" href="fonts/segoe-print/stylesheet.css">
         <link rel="stylesheet" href="icons/style.css">
@@ -18,118 +18,130 @@
         <script src="js/editing.js"></script>
         <script src="js/application.js"></script>
 		<script src="js/main.js"></script>
+        <script src="js/custom_carousel.js"></script>
+        <script src="js/video_carousel.js"></script>
         <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
     </head>
     <body>
         <div id="main">
-            <div id="logo">
-                <video autoplay playsinline loop muted src="assets/logo.mp4" poster="assets/logo.jpg"></video>*
-            </div>
             <div id="title" class="x-gradient-font">
-                <span style="font-size: 80px;">Structured 3D Latents</span><br>
-                <span style="font-size: 43px;">for Scalable and Versatile 3D Generation</span>
+                <span style="font-size: 80px;">MorphAny3D</span><br>
+                <span style="font-size: 43px;">Unleashing the Power of Structured Latent in 3D Morphing</span>
             </div>
             <div id="authors">
-                <div><a class="link" href="https://jeffreyxiang.github.io">Jianfeng Xiang</a><sup>1,3</sup></div>
-                <div><a class="link" href="https://github.com/MaxtirError">Zelong Lv</a><sup>2,3</sup></div>
-                <div><a class="link" href="https://github.com/sicxu">Sicheng Xu</a><sup>3</sup></div>
-                <div><a class="link" href="https://yudeng.github.io">Yu Deng</a><sup>3</sup></div>
-                <div><a class="link" href="https://wangrc.site">Ruicheng Wang</a><sup>2,3</sup></div>
-                <div><a class="link" href="http://home.ustc.edu.cn/~zhangbowen">Bowen Zhang</a><sup>2,3</sup></div>
-                <div><a class="link" href="http://www.dongchen.pro/">Dong Chen</a><sup>3</sup></div>
-                <div><a class="link" href="https://scholar.google.com/citations?user=P91a-UQAAAAJ&hl=en">Xin Tong</a><sup>3</sup></div>
-                <div><a class="link" href="https://jlyang.org">Jiaolong Yang</a><sup>3</sup></div>
+                <div><a class="link" href="https://xiaokunsun.github.io">Xiaokun Sun</a><sup>1</sup></div>
+                <div><a class="link" href="https://zcai0612.github.io">Zeyu Cai</a><sup>1</sup></div>
+                <div><a class="link" href="https://ha0tang.github.io">Hao Tang</a><sup>2</sup></div>
+                <div><a class="link" href="https://tyshiwo.github.io/index.html">Ying Tai</a><sup>1</sup></div>
+                <div><a class="link" href="https://scholar.google.com.hk/citations?user=6CIDtZQAAAAJ">Jian Yang</a><sup>1</sup></div>
+                <div><a class="link" href="https://jessezhang92.github.io">Zhenyu Zhang</a><sup>1*</sup></div>
             </div>
             <div id="institution">
-                <div><sup>1</sup><a class="link" href="https://www.tsinghua.edu.cn/en/">Tsinghua University</a></div>
-                <div><sup>2</sup><a class="link" href="https://en.ustc.edu.cn/">USTC</a></div>
-                <div><sup>3</sup><a class="link" href="https://www.microsoft.com/en-us/research/lab/microsoft-research-asia/">Microsoft Research</a></div>
+                <div><sup>1</sup><a class="link" href="https://njusz.nju.edu.cn/main.htm">Nanjing University</a></div>
+                <div><sup>2</sup><a class="link" href="https://www.pku.edu.cn">Peking University</a></div>
             </div>
-            <div class="x-center-text" style="font-size: 20px; font-weight: 700; color: #5f5f5f;">
-                CVPR 2025 Highlight
+            <div id="institution">
+                <div><sup>*</sup>Corresponding author</a></div>
             </div>
             <div id="links">
-                <div><a id="paper" href="https://arxiv.org/pdf/2412.01506.pdf">Paper</a></div>
-                <div><a id="arxiv" href="https://arxiv.org/abs/2412.01506">Arxiv</a></div>
-                <div><a id="code" href="https://github.com/Microsoft/TRELLIS">Code</a></div>
-                <div><a id="demo" href="https://huggingface.co/spaces/Microsoft/TRELLIS">Demo</a></div>
+                <div><a id="arxiv" href="https://github.com/XiaokunSun/MorphAny3D">Arxiv</a></div>
+                <div><a id="code" href="https://github.com/XiaokunSun/MorphAny3D">Code</a></div>
             </div>
-            <div class="x-center-text" style="font-size: 18px; font-weight: 600; color: #7a0e0e;"><i>
-                (Note: This is the only official webpage for the TRELLIS project)
-            </i></div>
             <div id="teaser">
                 <div style="width: 100%;"><video autoplay playsinline loop muted src="assets/teaser.mp4" poster="assets/teaser.jpg"></video></div>
             </div>
             <div class="x-center-text" style="font-size: 20px; font-weight: 500; color: #3f3f3f;">
-                <b>TL;DR:</b> A native 3D generative model built on a <i><b>unified Structured Latent representation</b></i> and <i><b>Rectified Flow Transformers</b></i>,
-                    enabling versatile and high-quality 3D asset creation.
+                <b>TL;DR:</b> A <b>training-free</b> 3D morphing method that leverages <b>the structured latent (SLAT)</b> representation to achieve <b>smooth and plausible</b> deformations between <b>diverse object categories</b>.
             </div>
             <div id="abstract" class="x-gradient-block">
-                We introduce a novel 3D generation method for versatile and high-quality 3D asset creation.
-                The cornerstone is a unified Structured LATent (<span style="font-size: 16px; font-weight: 600;">SL</span><span style="font-size: 12px; font-weight: 700;">AT</span>) representation which allows decoding to different output formats, such as Radiance Fields, 3D Gaussians, and meshes.
-                This is achieved by integrating a sparsely-populated 3D grid with dense multiview visual features extracted from a powerful vision foundation model,
-                comprehensively capturing both structural (geometry) and textural (appearance) information while maintaining flexibility during decoding.<br>
-                We employ rectified flow transformers tailored for <span style="font-size: 16px; font-weight: 600;">SL</span><span style="font-size: 12px; font-weight: 700;">AT</span> as our 3D generation models and train models with up to 2 billion parameters on a large 3D asset dataset of 500K diverse objects.
-                Our model generates high-quality results with text or image conditions, significantly surpassing existing methods, including recent ones at similar scales.
-                 We showcase flexible output format selection and local 3D editing capabilities which were not offered by previous models.
-                 Code, model, and data will be released.
+                3D morphing remains challenging due to the difficulty of generating semantically consistent and temporally smooth deformations, especially across categories. We present MorphAny3D, a training-free framework that leverages Structured Latent (SLAT) representations for high-quality 3D morphing. Our key insight is that intelligently blending source and target SLAT features within the attention mechanisms of 3D generators naturally produces plausible morphing sequences. To this end, we introduce Morphing Cross-Attention (MCA), which fuses source and target information for structural coherence, and Temporal-Fused Self-Attention (TFSA), which enhances temporal consistency by incorporating features from preceding frames. An orientation correction strategy further mitigates the pose ambiguity within the morphing steps. Extensive experiments show that our method generates state-of-the-art morphing sequences, even for challenging cross-category cases. MorphAny3D further supports advanced applications such as decoupled morphing and 3D style transfer, and can be generalized to other SLAT-based generative models.
             </div>
-            <p class="x-note">
-                <i>* Generated by</i> <span style="font-size: 16px; font-weight: 600;">T</span><span style="font-size: 12px; font-weight: 700;">RELLIS</span>, <i>using its</i> <span style="font-size: 16px; font-weight: 600;">image to 3D assets</span> <i>cabilities.</i>
-            </p>
-            <p class="x-note">
-                <i>The appearance and geometry shown in this page are rendered from 3D Gaussians and meshes, respectively.
-                GLB files are extracted by baking appearance from 3D Gaussians to meshes.</i>
-            </p>
 
-            <div class="x-section-title"><div class="x-gradient-font">Generation <span style="font-size: 40px; font-weight:600;">|</span> Text to 3D Asset</div></div>
-            <p>All text prompts are generated by GPT-4. Click on the cards to view extracted GLB files.</p>
-            <div id="results-txt2"></div>
+            <div class="x-section-title"><div class="x-gradient-font">Result <span style="font-size: 40px; font-weight:600;">|</span> Pocket Monsters</div></div>
+            <div id="video-carousel-Pocket-Monsters" style="margin-top: 20px;"></div>
+            <script>
+                window.addEventListener('load', function() {
+                    make_carousel('video-carousel-Pocket-Monsters', video_carousel_item_template, ip_video_items, 1, 1);
+                });
+            </script>
 
-            <div class="x-section-title"><div class="x-gradient-font">Generation <span style="font-size: 40px; font-weight:600;">|</span> Image to 3D Asset</div></div>
-            <p>Image prompts are generated by DALL-E 3. Click on the cards to view extracted GLB files.</p>
-            <div id="results-img2"></div>
+            <div class="x-section-title"><div class="x-gradient-font">Result <span style="font-size: 40px; font-weight:600;">|</span> General Objects</div></div>
+            <div id="video-carousel-general-objects" style="margin-top: 20px;"></div>
+            <script>
+                window.addEventListener('load', function() {
+                    make_carousel('video-carousel-general-objects', video_carousel_item_template, obj_video_items, 1, 1);
+                });
+            </script>
 
-            <div class="x-section-title"><div class="x-gradient-font">Editing <span style="font-size: 40px; font-weight:600;">|</span> Asset Variants</div></div>
-            <p>
-                <span style="font-size: 16px; font-weight: 600;">T</span><span style="font-size: 12px; font-weight: 700;">RELLIS</span>
-                can generates variants of a given 3D asset coherent with given text prompts.
-            </p>
-            <div id="results-variants"></div>
+            <div class="x-section-title"><div class="x-gradient-font">Asset Gallery</div></div>
+            <p>The leftmost and rightmost assets are the source and target objects, respectively. Click the cards to view the extracted GLB files.</p>
+            <div id="custom-carousel-ip"></div>
+            <script>
+                window.addEventListener('load', function() {
+                    make_carousel('custom-carousel-ip', custom_carousel_item_template, ip_custom_items, 1, 5);
+                });
+            </script>
 
-            <div class="x-section-title"><div class="x-gradient-font">Editing <span style="font-size: 40px; font-weight:600;">|</span> Local Manipulation</div></div>
-            <p>
-                <span style="font-size: 16px; font-weight: 600;">T</span><span style="font-size: 12px; font-weight: 700;">RELLIS</span>
-                can manipulate targeted local regions of a given 3D asset according to given text or image prompts.
-            </p>
-            <div id="results-manipulation"></div>
+            <div id="custom-carousel-obj"></div>
+            <script>
+                window.addEventListener('load', function() {
+                    make_carousel('custom-carousel-obj', custom_carousel_item_template, obj_custom_items, 1, 5);
+                });
+            </script>
 
-            <div class="x-section-title"><div class="x-gradient-font">Application <span style="font-size: 40px; font-weight:600;">|</span> 3D Art Designs</div></div>
-            <p>
-                Compositing the high-quality 3D assets generated by <span style="font-size: 16px; font-weight: 600;">T</span><span style="font-size: 12px; font-weight: 700;">RELLIS</span>,
-                complex and vibrant 3D art designs can be created with ease.
-            </p>
-            <div id="results-scene"></div>
+            <div class="x-section-title"><div class="x-gradient-font">Comparison</div></div>
+            <div id="video-carousel-comparison" style="margin-top: 20px;"></div>
+            <script>
+                window.addEventListener('load', function() {
+                    make_carousel('video-carousel-comparison', video_carousel_item_template, comp_video_items, 1, 1);
+                });
+            </script>
+
+            <div class="x-section-title"><div class="x-gradient-font">Ablation Study</div></div>
+            <div id="video-carousel-ablation" style="margin-top: 20px;"></div>
+            <script>
+                window.addEventListener('load', function() {
+                    make_carousel('video-carousel-ablation', video_carousel_item_template, ablat_video_items, 1, 1);
+                });
+            </script>
+
+            <div class="x-section-title"><div class="x-gradient-font">Application <span style="font-size: 40px; font-weight:600;">|</span> Disentangled 3D Morphing</div></div>
+            <div id="video-carousel-disentangled" style="margin-top: 20px;"></div>
+            <script>
+                window.addEventListener('load', function() {
+                    make_carousel('video-carousel-disentangled', video_carousel_item_template, app1_video_items, 1, 1);
+                });
+            </script>
+
+            <div class="x-section-title"><div class="x-gradient-font">Application <span style="font-size: 40px; font-weight:600;">|</span> Dual-Target 3D Morphing</div></div>
+            <div id="video-carousel-dual" style="margin-top: 20px;"></div>
+            <script>
+                window.addEventListener('load', function() {
+                    make_carousel('video-carousel-dual', video_carousel_item_template, app2_video_items, 1, 1);
+                });
+            </script>
+
+            <div class="x-section-title"><div class="x-gradient-font">Application <span style="font-size: 40px; font-weight:600;">|</span> 3D Style Transfer</div></div>
+           <div style="width: 100%; display: flex; flex-direction: column; align-items: center; margin-top: 20px;">
+                <video controls playsinline loop muted autoplay style="max-width: 100%; max-height: 500px;" src="assets/morphing/video_results/app3.mp4"></video>
+            </div>
+
+            <div class="x-section-title"><div class="x-gradient-font">Generalization Ability <span style="font-size: 40px; font-weight:600;">|</span> Hi3DGen</div></div>
+            <div style="width: 100%; display: flex; flex-direction: column; align-items: center; margin-top: 20px;">
+                <video controls playsinline loop muted autoplay style="max-width: 100%; max-height: 500px;" src="assets/morphing/video_results/gener1.mp4"></video>
+            </div>
+
+            <div class="x-section-title"><div class="x-gradient-font">Generalization Ability <span style="font-size: 40px; font-weight:600;">|</span> Text-to-3D Trellis</div></div>
+            <div style="width: 100%; display: flex; flex-direction: column; align-items: center; margin-top: 20px;">
+                <video controls playsinline loop muted autoplay style="max-width: 100%; max-height: 500px;" src="assets/morphing/video_results/gener2.mp4"></video>
+            </div>
 
             <div class="x-section-title"><div class="x-gradient-font">Methodology</div></div>
             <p>
                 <img src="assets/pipeline.png" alt="Pipeline of the method" style="width: 100%;">
             </p>
             <p>
-                We introduce Structured LATents (<span style="font-size: 16px; font-weight: 600;">SL</span><span style="font-size: 12px; font-weight: 700;">AT</span>),
-                a unified 3D latent representation for high-quality, versatile 3D generation. <span style="font-size: 16px; font-weight: 600;">SL</span><span style="font-size: 12px; font-weight: 700;">AT</span>
-                marries sparse structures with powerful visual representations. It defines local latents on active voxels intersecting the object's surface.
-                The local latents are encoded by fusing and processing image features from densely rendered views of the 3D asset, while attaches them onto active voxels.
-                These features, derived from powerful pretrained vision encoders, capture detailed geometric and visual characteristics, complementing the coarse structure provided by the active voxels.
-                Different decoders can then be applied to map <span style="font-size: 16px; font-weight: 600;">SL</span><span style="font-size: 12px; font-weight: 700;">AT</span> to diverse 3D representations of high quality.
-            </p>
-            <p>
-                Building on <span style="font-size: 16px; font-weight: 600;">SL</span><span style="font-size: 12px; font-weight: 700;">AT</span>, we train a family of large 3D generation models, dubbed <span style="font-size: 16px; font-weight: 600;">T</span><span style="font-size: 12px; font-weight: 700;">RELLIS</span>, with text prompts or images as conditions.
-                A two stage pipeline is applied which first generates the sparse structure of <span style="font-size: 16px; font-weight: 600;">SL</span><span style="font-size: 12px; font-weight: 700;">AT</span>, followed by generating the latent vectors for non-empty cells.
-                We employ rectified flow transformers as our backbone models and adapt them properly to handle the sparsity in <span style="font-size: 16px; font-weight: 600;">SL</span><span style="font-size: 12px; font-weight: 700;">AT</span>.
-                We train Trellis with up to 2 billion parameters on a large dataset of carefully-collected 3D assets.
-                <span style="font-size: 16px; font-weight: 600;">T</span><span style="font-size: 12px; font-weight: 700;">RELLIS</span> can create high-quality 3D assets with detailed geometry and vivid texture, significantly surpassing previous methods.
-                Moreover, it can easily generate 3D assets with different output formats to meet diverse downstream requirements.
+                <b>(a) Overview of our method.</b> MorphAny3D generates a smooth and high-quality morphing sequence between diverse object categories by leveraging the SLAT representation without any training. <b>(b) Morphing Cross-Attention (MCA)</b> fuses information from the source and target objects in the cross-attention layers to ensure the structural coherence and aesthetics of the deformation. <b>(c) Temporal-Fused Self-Attention (TFSA)</b> enhances temporal smoothness by incorporating SLAT features from the previous morphing frame into the self-attention mechanism, enabling smooth transitions over time. <b>(d) An orientation correction strategy</b> inspired by statistical orientation distribution patterns in Trellis-generated assets is proposed to resolve abrupt orientation shifts.
             </p>
 
             <div class="x-section-title"><div class="x-gradient-font">Citation</div></div>
@@ -140,43 +152,14 @@
 @article{xiang2024structured,
     title   = {Structured 3D Latents for Scalable and Versatile 3D Generation},
     author  = {Xiang, Jianfeng and Lv, Zelong and Xu, Sicheng and Deng, Yu and Wang, Ruicheng and 
-               Zhang, Bowen and Chen, Dong and Tong, Xin and Yang, Jiaolong},
+            Zhang, Bowen and Chen, Dong and Tong, Xin and Yang, Jiaolong},
     journal = {arXiv preprint arXiv:2412.01506},
     year    = {2024}
 }
             </p>
-            <div style="height: 100px;"> </div>
             <p class="x-note">
-                <b style="line-height: 32px;">Responsible AI Considerations</b><br>
-                <i>
-                    TRELLIS is purely a research project. Responsible AI considerations were factored into all stages. The datasets used in this paper are public and have been reviewed to ensure there is no personally identifiable information or harmful content. However, as these datasets are sourced from the Internet, potential bias may still be present. Currently the model excels at generating artistic-style 3D assets and its capability in generating photorealistic real-world objects is limited.
-                </i>
+                The website template is borrowed from <a class="link" href="https://microsoft.github.io/TRELLIS">TRELLIS</a>.
             </p>
-            <p class="x-note">
-                <b style="line-height: 32px;">Material Disclaimer</b><br>
-                <i>
-                The materials made available on this page are provided solely for academic and research purposes in connection with the exploration of text-to-3D and image-to-3D generation technologies, as described in the publication accessible at https://arxiv.org/abs/2412.01506. These materials are not intended for commercial exploitation or use.
-If you believe that any content on this page infringes upon your intellectual property rights, including but not limited to copyright, please notify us by submitting a takedown request via email to jiaoyan (at) microsoft.com.
-                </i>
-            </p>
-        </div>
-        <div id="bottombar">
-            <div class="row">
-                <div><span>T<span style="font-size: 10px;">RELLIS</span>:</span> Structured 3D Latents for Scalable and Versatile 3D Generation</div>
-                <div style="display: flex; flex-direction: row; gap: 8px;">
-                    <a href="https://github.com/microsoft/TRELLIS/issues">Contact Us on GitHub</a>
-                    <span style="width: 1px; background-color: rgba(255, 255, 255, 0.7);"></span>
-                    <a href="https://go.microsoft.com/fwlink/?LinkId=521839">Privacy & Cookies</a>
-                    <span style="width: 1px; background-color: rgba(255, 255, 255, 0.7);"></span>
-                    <a href="https://go.microsoft.com/fwlink/?linkid=2259814">Consumer Health Privacy</a>
-                    <span style="width: 1px; background-color: rgba(255, 255, 255, 0.7);"></span>
-                    <a href="https://go.microsoft.com/fwlink/?LinkID=246338">Terms of Use</a>
-                    <span style="width: 1px; background-color: rgba(255, 255, 255, 0.7);"></span>
-                    <a href="https://go.microsoft.com/fwlink/?linkid=2196228">Trademarks</a>
-                    <span style="width: 1px; background-color: rgba(255, 255, 255, 0.7);"></span>
-                    <span>© 2025 Microsoft</span>
-                </div>
-            </div>
         </div>
     </body>
 </html>

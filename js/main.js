@@ -1,5 +1,6 @@
 window.onload = function() {
     initWindow();
+    make_carousel('results-morphing', morphing_carousel_item_template, morphing_items, 1, 5);
     make_carousel('results-txt2', txt2_carousel_item_template, txt2_items, 2, 4);
     make_carousel('results-img2', img2_carousel_item_template, img2_items, 2, 4);
     make_carousel('results-variants', variants_carousel_item_template, variants_items, 2, 1);

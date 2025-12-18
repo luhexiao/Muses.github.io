@@ -460,7 +460,7 @@ video {
 } */
 
 #teaser .label div {
-    height: 100%;
+    height: auto;
     width: 100%;
     font-size: 36px;
     font-weight: 700;

@@ -250,6 +250,48 @@ function asset_panel_template(prompt) {
 }
 
 
+function new_asset_panel_template() {
+    return `
+        <div class="x-row" style="justify-content: center; gap: 20px; margin-top: 10px;">
+            <div class="x-row" style="width: auto;">
+                <div id="appearance-button" class="modelviewer-panel-button small checked" onclick="showTexture()">Appearance</div>
+                <div id="geometry-button" class="modelviewer-panel-button small" onclick="hideTexture()">Geometry</div>
+            </div>
+            <div id="download-button" class="modelviewer-panel-button enabled" onclick="downloadGLB()">Download GLB</div>
+        </div>
+    `;
+}
+
+function modelviewer_window_template_vertical(item, panel, config) {
+    let viewer_size = config && config.viewer_size || 500;
+    let show_annotations = config && config.show_annotations || false;
+    html = `<div class="x-column" style="align-items: center; width: ${viewer_size}px; max-width: calc(100vw - 32px);">
+                <div class="modelviewer-container" style="width: ${viewer_size}px;">
+                    <model-viewer
+                        id="modelviewer"
+                        src="${item.model}"
+                        camera-controls
+                        tone-mapping="natural"
+                        shadow-intensity="1"
+                        environment-image="assets/env_maps/white.jpg"
+                        exposure="${item.exposure || 5}"
+                        >`
+    if (show_annotations) {
+        window_state.assets = item.assets;
+        window_state.prompt_template = item.prompt_template;
+        for (let i = 0; i < item.assets.length; i++) {
+            html += `<button slot="hotspot-${i}" data-position="${item.assets[i].position.join(' ')}">${item.assets[i].name}</button>`;
+        }
+    }
+    html += `        </model-viewer>
+                </div>
+                <div class="modelviewer-panel" style="width: 100%; padding-top: 10px;">
+                    ${panel}
+                </div>
+            </div>`;
+    return html;
+}
+
 function scene_panel_template(item) {
     html = `
         <div style="font-size: 28px; font-weight: 700; margin: 8px 0px 0px 4px">${item.title}</div>
