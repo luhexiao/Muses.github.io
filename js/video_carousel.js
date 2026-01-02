@@ -42,9 +42,9 @@ var ip_video_items = [
 ];
 
 var res_video_items = [
-    { video: "assets/Muses/video_results/results1.mp4", caption: "" },
-    { video: "assets/Muses/video_results/results2.mp4", caption: "" },
-    { video: "assets/Muses/video_results/results3.mp4", caption: "" }
+    { video: "assets/muses/video_results/results1.mp4", caption: "" },
+    { video: "assets/muses/video_results/results2.mp4", caption: "" },
+    { video: "assets/muses/video_results/results3.mp4", caption: "" }
 ];
 
 var obj_video_items = [
