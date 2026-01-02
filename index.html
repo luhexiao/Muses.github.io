@@ -2,7 +2,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>MorphAny3D: Unleashing the Power of Structured Latent in 3D Morphing</title>
+        <title>Muses: Designing, Composing, Generating Nonexistent Fantasy 3D Creatures without Training</title>
         <link rel="icon" href="nju.png">
         <link rel="stylesheet" href="fonts/avenir-next/stylesheet.css">
         <link rel="stylesheet" href="fonts/segoe-print/stylesheet.css">
@@ -25,103 +25,109 @@
     <body>
         <div id="main">
             <div id="title" class="x-gradient-font">
-                <span style="font-size: 80px;">MorphAny3D</span><br>
-                <span style="font-size: 43px;">Unleashing the Power of Structured Latent in 3D Morphing</span>
+                <span style="font-size: 80px;">Muses</span><br>
+                <span style="font-size: 43px;">Designing, Composing, Generating Nonexistent Fantasy 3D Creatures without Training</span>
             </div>
             <div id="authors">
-                <div><a class="link" href="https://xiaokunsun.github.io">Xiaokun Sun</a><sup>1</sup></div>
+                <div><a class="link" href="https://github.com/luhexiao">Hexiao Lu</a><sup>1,2*</sup></div>
+                <div><a class="link" href="https://xiaokunsun.github.io">Xiaokun Sun</a><sup>1*</sup></div>
                 <div><a class="link" href="https://zcai0612.github.io">Zeyu Cai</a><sup>1</sup></div>
-                <div><a class="link" href="https://ha0tang.github.io">Hao Tang</a><sup>2</sup></div>
+                <div><a class="link" href="https://github.com/LiveStockShapeAnalysis">Hao Guo</a><sup>2</sup></div>
                 <div><a class="link" href="https://tyshiwo.github.io/index.html">Ying Tai</a><sup>1</sup></div>
                 <div><a class="link" href="https://scholar.google.com.hk/citations?user=6CIDtZQAAAAJ">Jian Yang</a><sup>1</sup></div>
-                <div><a class="link" href="https://jessezhang92.github.io">Zhenyu Zhang</a><sup>1*</sup></div>
+                <div><a class="link" href="https://jessezhang92.github.io">Zhenyu Zhang</a><sup>1†</sup></div>
             </div>
             <div id="institution">
                 <div><sup>1</sup><a class="link" href="https://njusz.nju.edu.cn/main.htm">Nanjing University</a></div>
-                <div><sup>2</sup><a class="link" href="https://www.pku.edu.cn">Peking University</a></div>
+                <div><sup>2</sup><a class="link" href="https://www.cau.edu.cn/">China Agricultural University</a></div>
             </div>
             <div id="institution">
-                <div><sup>*</sup>Corresponding author</a></div>
+                <div><sup>*</sup>Equal contribution</a></div>
+                <div><sup>†</sup>Corresponding author</a></div>
             </div>
             <div id="links">
-                <div><a id="arxiv" href="https://github.com/XiaokunSun/MorphAny3D">Arxiv</a></div>
-                <div><a id="code" href="https://github.com/XiaokunSun/MorphAny3D">Code</a></div>
+                <div><a id="arxiv" href="https://github.com/luhexiao/Muses">Arxiv</a></div>
+                <div><a id="code" href="https://github.com/luhexiao/Muses">Code</a></div>
             </div>
             <div id="teaser">
-                <div style="width: 100%;"><video autoplay playsinline loop muted src="assets/teaser.mp4" poster="assets/teaser.jpg"></video></div>
+                <!-- <div style="width: 100%;"><video autoplay playsinline loop muted src="assets/teaser.mp4" poster="assets/teaser.jpg"></video></div> -->
             </div>
             <div class="x-center-text" style="font-size: 20px; font-weight: 500; color: #3f3f3f;">
-                <b>TL;DR:</b> A <b>training-free</b> 3D morphing method that leverages <b>the structured latent (SLAT)</b> representation to achieve <b>smooth and plausible</b> deformations between <b>diverse object categories</b>.
+                <b>TL;DR:</b> A <b>training-free</b> framework for <b>nonexistent fantastic</b> 3D creature generation that leverages a <b>skeletal</b> foundation to <b>explicitly and rationally</b> compose diverse elements into <b>creative creatures</b>.
             </div>
             <div id="abstract" class="x-gradient-block">
-                3D morphing remains challenging due to the difficulty of generating semantically consistent and temporally smooth deformations, especially across categories. We present MorphAny3D, a training-free framework that leverages Structured Latent (SLAT) representations for high-quality 3D morphing. Our key insight is that intelligently blending source and target SLAT features within the attention mechanisms of 3D generators naturally produces plausible morphing sequences. To this end, we introduce Morphing Cross-Attention (MCA), which fuses source and target information for structural coherence, and Temporal-Fused Self-Attention (TFSA), which enhances temporal consistency by incorporating features from preceding frames. An orientation correction strategy further mitigates the pose ambiguity within the morphing steps. Extensive experiments show that our method generates state-of-the-art morphing sequences, even for challenging cross-category cases. MorphAny3D further supports advanced applications such as decoupled morphing and 3D style transfer, and can be generalized to other SLAT-based generative models.
+                We present Muses, the first training-free method for fantastic 3D creature generation in a feed-forward paradigm. Previous methods, which rely on part-aware optimization, manual assembly, or 2D image generation, often produce unrealistic or incoherent 3D assets due to the challenges of intricate part-level manipulation and limited out-of-domain generation. In contrast, Muses leverages the 3D skeleton—a fundamental representation of biological forms—to explicitly and rationally compose diverse elements. This skeletal foundation formalizes 3D content creation as a structure-aware pipeline of design, composition, and generation. Muses begins by constructing a creatively composed 3D skeleton with coherent layout and scale through graph-constrained reasoning. This skeleton then guides a voxel-based assembly process within a structured latent space, integrating regions from different objects. Finally, image-guided appearance modeling under skeletal conditions is applied to generate a style-consistent and harmonious texture for the assembled shape. Extensive experiments establish Muses' state-of-the-art performance in terms of visual fidelity and alignment with textual descriptions, and potential on flexible 3D object editing.
             </div>
 
-            <div class="x-section-title"><div class="x-gradient-font">Result <span style="font-size: 40px; font-weight:600;">|</span> Pocket Monsters</div></div>
-            <div id="video-carousel-Pocket-Monsters" style="margin-top: 20px;"></div>
+            <div class="x-section-title"><div class="x-gradient-font">Result <span style="font-size: 40px; font-weight:600;"></div></div>
+            <div id="video-carousel" style="margin-top: 20px;"></div>
             <script>
                 window.addEventListener('load', function() {
-                    make_carousel('video-carousel-Pocket-Monsters', video_carousel_item_template, ip_video_items, 1, 1);
+                    make_carousel('video-carousel', video_carousel_item_template, res_video_items, 1, 1);
                 });
             </script>
 
-            <div class="x-section-title"><div class="x-gradient-font">Result <span style="font-size: 40px; font-weight:600;">|</span> General Objects</div></div>
+            <!-- <div class="x-section-title"><div class="x-gradient-font">Result <span style="font-size: 40px; font-weight:600;">|</span> General Objects</div></div>
             <div id="video-carousel-general-objects" style="margin-top: 20px;"></div>
             <script>
                 window.addEventListener('load', function() {
                     make_carousel('video-carousel-general-objects', video_carousel_item_template, obj_video_items, 1, 1);
                 });
-            </script>
+            </script> -->
 
             <div class="x-section-title"><div class="x-gradient-font">Asset Gallery</div></div>
-            <p>The leftmost and rightmost assets are the source and target objects, respectively. Click the cards to view the extracted GLB files. 3D assets are loading slowly, please be patient.</p>
+            <p>Click the cards to view the extracted GLB files. 3D assets are loading slowly, please be patient.</p>
             <div id="custom-carousel-ip"></div>
             <script>
                 window.addEventListener('load', function() {
-                    make_carousel('custom-carousel-ip', custom_carousel_item_template, ip_custom_items, 1, 5);
+                    make_carousel('custom-carousel-ip', custom_carousel_item_template, ip_custom_items, 3, 5);
                 });
             </script>
 
-            <div id="custom-carousel-obj"></div>
+            <!-- <div id="custom-carousel-obj"></div>
             <script>
                 window.addEventListener('load', function() {
                     make_carousel('custom-carousel-obj', custom_carousel_item_template, obj_custom_items, 1, 5);
                 });
-            </script>
+            </script> -->
 
             <div class="x-section-title"><div class="x-gradient-font">Comparison</div></div>
-            <div id="video-carousel-comparison" style="margin-top: 20px;"></div>
-            <script>
+            <div id="video-carousel-comparison" style="margin-top: 20px;">
+                <video controls playsinline loop muted autoplay style="max-width: 100%; max-height: 500px;" src="assets/muses/video_results/comp1.mp4"></video>
+            </div>
+            <!-- <script>
                 window.addEventListener('load', function() {
                     make_carousel('video-carousel-comparison', video_carousel_item_template, comp_video_items, 1, 1);
                 });
-            </script>
+            </script> -->
+            <p>*DreamBeast cannot handle contents with more than three animals, and OmniPart requires manual stitching.</p>
 
             <div class="x-section-title"><div class="x-gradient-font">Ablation Study</div></div>
-            <div id="video-carousel-ablation" style="margin-top: 20px;"></div>
-            <script>
-                window.addEventListener('load', function() {
-                    make_carousel('video-carousel-ablation', video_carousel_item_template, ablat_video_items, 1, 1);
-                });
-            </script>
+            <div id="video-carousel-comparison" style="margin-top: 20px;">
+                <video controls playsinline loop muted autoplay style="max-width: 100%; max-height: 500px;" src="assets/muses/video_results/ablat1.mp4"></video>
+            </div>
 
-            <div class="x-section-title"><div class="x-gradient-font">Application <span style="font-size: 40px; font-weight:600;">|</span> Disentangled 3D Morphing</div></div>
-            <div id="video-carousel-disentangled" style="margin-top: 20px;"></div>
-            <script>
+            <div class="x-section-title"><div class="x-gradient-font">Application <span style="font-size: 40px; font-weight:600;">|</span> Geometric Editing</div></div>
+            <div id="video-carousel-disentangled" style="margin-top: 20px;">
+                    <video controls playsinline loop muted autoplay style="max-width: 100%; max-height: 500px;" src="assets/muses/video_results/app1.mp4"></video>
+            </div>
+            <!-- <script>
                 window.addEventListener('load', function() {
                     make_carousel('video-carousel-disentangled', video_carousel_item_template, app1_video_items, 1, 1);
                 });
-            </script>
+            </script> -->
 
-            <div class="x-section-title"><div class="x-gradient-font">Application <span style="font-size: 40px; font-weight:600;">|</span> Dual-Target 3D Morphing</div></div>
-            <div id="video-carousel-dual" style="margin-top: 20px;"></div>
-            <script>
+            <div class="x-section-title"><div class="x-gradient-font">Application <span style="font-size: 40px; font-weight:600;">|</span> Texture Editing</div></div>
+            <div id="video-carousel-dual" style="margin-top: 20px;">
+                <video controls playsinline loop muted autoplay style="max-width: 100%; max-height: 500px;" src="assets/muses/video_results/app2.mp4"></video>
+            </div>
+            <!-- <script>
                 window.addEventListener('load', function() {
                     make_carousel('video-carousel-dual', video_carousel_item_template, app2_video_items, 1, 1);
                 });
-            </script>
+            </script> -->
 
-            <div class="x-section-title"><div class="x-gradient-font">Application <span style="font-size: 40px; font-weight:600;">|</span> 3D Style Transfer</div></div>
+            <!-- <div class="x-section-title"><div class="x-gradient-font">Application <span style="font-size: 40px; font-weight:600;">|</span> 3D Style Transfer</div></div>
            <div style="width: 100%; display: flex; flex-direction: column; align-items: center; margin-top: 20px;">
                 <video controls playsinline loop muted autoplay style="max-width: 100%; max-height: 500px;" src="assets/morphing/video_results/app3.mp4"></video>
             </div>
@@ -134,15 +140,70 @@
             <div class="x-section-title"><div class="x-gradient-font">Generalization Ability <span style="font-size: 40px; font-weight:600;">|</span> Text-to-3D Trellis</div></div>
             <div style="width: 100%; display: flex; flex-direction: column; align-items: center; margin-top: 20px;">
                 <video controls playsinline loop muted autoplay style="max-width: 100%; max-height: 500px;" src="assets/morphing/video_results/gener2.mp4"></video>
-            </div>
+            </div> -->
 
             <div class="x-section-title"><div class="x-gradient-font">Methodology</div></div>
             <p>
                 <img src="assets/pipeline.png" alt="Pipeline of the method" style="width: 100%;">
             </p>
-            <p>
-                <b>(a) Overview of our method.</b> MorphAny3D generates a smooth and high-quality morphing sequence between diverse object categories by leveraging the SLAT representation without any training. <b>(b) Morphing Cross-Attention (MCA)</b> fuses information from the source and target objects in the cross-attention layers to ensure the structural coherence and aesthetics of the deformation. <b>(c) Temporal-Fused Self-Attention (TFSA)</b> enhances temporal smoothness by incorporating SLAT features from the previous morphing frame into the self-attention mechanism, enabling smooth transitions over time. <b>(d) An orientation correction strategy</b> inspired by statistical orientation distribution patterns in Trellis-generated assets is proposed to resolve abrupt orientation shifts.
-            </p>
+            <style>
+                /* CSS to stack superscripts and subscripts vertically */
+                .math-term {
+                  display: inline-flex;
+                  align-items: center;
+                  vertical-align: middle;
+                  font-weight: normal;
+                }
+                .math-limits {
+                  display: inline-flex;
+                  flex-direction: column;
+                  justify-content: center;
+                  font-size: 0.75em;
+                  margin-left: 2px;
+                  line-height: 1;
+                }
+                /* CSS to center the dot over G */
+                .dot-over {
+                  position: relative;
+                  display: inline-block;
+                }
+                .dot-over::after {
+                  content: ".";
+                  position: absolute;
+                  top: -0.6em;
+                  left: 50%;
+                  transform: translateX(-50%);
+                  font-size: 1.2em;
+                  font-weight: bold;
+                }
+              </style>
+              
+              <p>
+                <b>Overview of Muses.</b> Our framework automates fantastic creature generation through a 3D skeleton-driven pipeline of design, composition, and generation. Given a text prompt, Stage I parses it into concepts, generates corresponding 3D assets 
+                
+                <span class="math-term">
+                  {<b>X</b>}
+                  <span class="math-limits">
+                    <span>M</span>
+                    <span>m=1</span>
+                  </span>
+                </span>
+                
+                and skeletons 
+                
+                <span class="math-term">
+                  {<b>G</b>=(<b>V</b>,<b>E</b>)}
+                  <span class="math-limits">
+                    <span>M</span>
+                    <span>m=1</span>
+                  </span>
+                </span>,
+                
+                and uses graph classification with LLM-guided reasoning to produce a text-aligned skeleton 
+                <b>&#288;</b>. 
+                
+                In Stage II, this skeleton guides part assembly in a structured latent space (SLAT), yielding a composed latent code <b>Z</b>&prime;. In Stage III, <b>Z</b>&prime; is decoded into a coarse 3D creature <b>X</b>&prime;, which guides geometry-invariant texture editing and undergoes a final style-conscious refinement to produce the detailed, harmonious output <b>X</b>&Prime;. The entire pipeline is automatic, training-free, and feed-forward.
+              </p>
 
             <div class="x-section-title"><div class="x-gradient-font">Citation</div></div>
             <p>

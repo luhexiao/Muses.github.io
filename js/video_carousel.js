@@ -5,13 +5,13 @@ var ablat_video_items = [
 ];
 
 var app1_video_items = [
-    { video: "assets/morphing/video_results/app1_1.mp4", caption: "" },
-    { video: "assets/morphing/video_results/app1_2.mp4", caption: "" }
+    { video: "assets/muses/video_results/app1.mp4", caption: "" }
+    // { video: "assets/morphing/video_results/app1_2.mp4", caption: "" }
 ];
 
 var app2_video_items = [
-    { video: "assets/morphing/video_results/app2_1.mp4", caption: "" },
-    { video: "assets/morphing/video_results/app2_2.mp4", caption: "" }
+    { video: "assets/muses/video_results/app2.mp4", caption: "" }
+    // { video: "assets/morphing/video_results/app2_2.mp4", caption: "" }
 ];
 
 var app3_video_items = [
@@ -24,10 +24,10 @@ var gener_video_items = [
 ];
 
 var comp_video_items = [
-    { video: "assets/morphing/video_results/comp1.mp4", caption: "" },
-    { video: "assets/morphing/video_results/comp2.mp4", caption: "" },
-    { video: "assets/morphing/video_results/comp3.mp4", caption: "" },
-    { video: "assets/morphing/video_results/comp4.mp4", caption: "" }
+    { video: "assets/muses/video_results/comp1.mp4", caption: "" }
+    // { video: "assets/morphing/video_results/comp2.mp4", caption: "" },
+    // { video: "assets/morphing/video_results/comp3.mp4", caption: "" },
+    // { video: "assets/morphing/video_results/comp4.mp4", caption: "" }
 ];
 
 var ip_video_items = [
@@ -39,6 +39,12 @@ var ip_video_items = [
     { video: "assets/morphing/video_results/ip6.mp4", caption: "" },
     { video: "assets/morphing/video_results/ip7.mp4", caption: "" },
     { video: "assets/morphing/video_results/ip8.mp4", caption: "" }
+];
+
+var res_video_items = [
+    { video: "assets/Muses/video_results/results1.mp4", caption: "" },
+    { video: "assets/Muses/video_results/results2.mp4", caption: "" },
+    { video: "assets/Muses/video_results/results3.mp4", caption: "" },
 ];
 
 var obj_video_items = [
