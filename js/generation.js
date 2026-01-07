@@ -108,7 +108,7 @@ function txt2_window_template(item) {
     let prompt = `<div class="x-handwriting">${item.prompt}</div>`;
     let panel = asset_panel_template(prompt);
     item = JSON.parse(JSON.stringify(item));
-    item.model = 'assets/txt2/glbs/' + item.model
+    item.model = 'assets/muses/' + item.model
     return modelviewer_window_template(item, panel);
 }
 

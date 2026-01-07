@@ -63,7 +63,7 @@ var obj_custom_items = [
 
 var ip_custom_items = [
     { name: "", video: "3D_results/0.mp4", prompt: "A creature with a body of a seahorse and wings of a bee", model: "3D_results/0.glb", exposure: 3 },
-    { name: "", video: "3D_results/1.mp4", prompt: "A creature with a body of a robot and a head of a Patrick Star", model: "3D_results/1.glb", model: "3D_IP_results/Chikorita2+Growlithe2/1.glb", exposure: 3 },
+    { name: "", video: "3D_results/1.mp4", prompt: "A creature with a body of a robot and a head of a Patrick Star", model: "3D_results/1.glb", exposure: 3 },
     { name: "", video: "3D_results/2.mp4", prompt: "A creature with a body of a frog and wings of a dragonfly", model: "3D_results/2.glb", exposure: 3 },
     { name: "", video: "3D_results/3.mp4", prompt: "A creature with a body of a robot and wings of a vulture and a head of a horse", model: "3D_results/3.glb", exposure: 3 },
     { name: "", video: "3D_results/4.mp4", prompt: "A creature with a body of a bear and wings of a butterfly and a head of a giraffe", model: "3D_results/4.glb", exposure: 3 },
@@ -78,7 +78,7 @@ var ip_custom_items = [
     { name: "", video: "3D_results/13.mp4", prompt: "A creature with legs of a robot and a head of a SpongeBob SquarePants", model: "3D_results/13.glb", exposure: 3 },
     { name: "", video: "3D_results/14.mp4", prompt: "A creature with a body of a cat and wings of a mandarin duck and a head of an antelope", model: "3D_results/14.glb", exposure: 3 },
     { name: "", video: "3D_results/15.mp4", prompt: "A creature with a body of a lion and wings of a dove and a head of an elephant", model: "3D_results/15.glb", exposure: 3 },
-    { name: "", video: "3D_results/16.mp4", prompt: "A creature with a body of a dragon and wings of a dragon and a head of a robot", model: "3D_results/16.glb", model: "3D_IP_results/Chikorita2+Growlithe2/1.glb", exposure: 3 },
+    { name: "", video: "3D_results/16.mp4", prompt: "A creature with a body of a dragon and wings of a dragon and a head of a robot", model: "3D_results/16.glb", exposure: 3 },
     { name: "", video: "3D_results/17.mp4", prompt: "A creature with a body of a jellyfish and wings of a bat", model: "3D_results/17.glb", exposure: 3 },
     { name: "", video: "3D_results/18.mp4", prompt: "A creature with a body of a penguin and wings of a flamingo and a head of a transformer", model: "3D_results/18.glb", exposure: 3 },
     { name: "", video: "3D_results/19.mp4", prompt: "A creature with a body of a tiger and wings of a dragon and legs of a quadrupedal robot and a tail of a fox and a head of a argali", model: "3D_results/19.glb", exposure: 3 },
@@ -93,7 +93,7 @@ var ip_custom_items = [
     { name: "", video: "3D_results/28.mp4", prompt: "A creature with a body of an agumon and wings of an ostrich and a head of a gabumon", model: "3D_results/28.glb", exposure: 3 },
     { name: "", video: "3D_results/29.mp4", prompt: "A creature with a body of a pikachu and wings of a bat and a head of a palmon", model: "3D_results/29.glb", exposure: 3 },
     { name: "", video: "3D_results/30.mp4", prompt: "A creature with a body of a mugendramon and wings of a lark and a head of a rhino", model: "3D_results/30.glb", exposure: 3 },
-    { name: "", video: "3D_results/31.mp4", prompt: "A creature with a body of a gengar and wings of a lark and a tail of a pikachu", model: "3D_results/1.glb", model: "3D_IP_results/Chikorita2+Growlithe2/31.glb", exposure: 3 },
+    { name: "", video: "3D_results/31.mp4", prompt: "A creature with a body of a gengar and wings of a lark and a tail of a pikachu", model: "3D_results/1.glb", exposure: 3 },
     { name: "", video: "3D_results/32.mp4", prompt: "A creature with a body of a lion and wings of a butterfly and a head of an elephant", model: "3D_results/32.glb", exposure: 3 },
     { name: "", video: "3D_results/33.mp4", prompt: "A creature with a body of a kangaroo and wings of a piyomon and legs of a quadruped robot and a head of an groudon", model: "3D_results/33.glb", exposure: 3 },
     { name: "", video: "3D_results/34.mp4", prompt: "A creature with a body of a cat and wings of a dragon and legs of a dog and a head of a sika deer", model: "3D_results/34.glb", exposure: 3 },
@@ -123,7 +123,7 @@ var custom_items = [
 ]
 
 function custom_carousel_item_template(item) {
-    return `<div class="x-card clickable" style="min-width: 120px" onclick=\'openWindow(txt2_window_template(${JSON.stringify(item)}))\'>
+    return `<div class="x-card clickable" style="min-width: 120px" onclick=\'openWindow(custom_window_template(${JSON.stringify(item)}))\'>
                 <div class="x-labels">
                     <div class="x-label">GLB ✓</div>
                 </div>
@@ -146,10 +146,12 @@ function custom_carousel_item_template(item) {
     //         </div>`;
 }
 
-// function custom_window_template(item) {
-//     let prompt = `<div class="x-handwriting">${item.prompt}</div>`;
-//     let panel = asset_panel_template(prompt);
-//     item_copy = JSON.parse(JSON.stringify(item));
-//     item_copy.model = 'assets/muses/' + item_copy.model;
-//     return modelviewer_window_template_vertical(item_copy, panel);
-// }
+function custom_window_template(item) {
+    let prompt = `<div class="x-handwriting">${item.prompt}</div>`;
+    let panel = asset_panel_template(prompt);
+    item_copy = JSON.parse(JSON.stringify(item));
+    item_copy.model = 'assets/muses/' + item_copy.model;
+    console.log('Loading GLB from:', item_copy.model);
+    console.log('Item data:', item_copy);
+    return modelviewer_window_template(item_copy, panel);
+}

@@ -34,6 +34,26 @@ function openWindow(content) {
         fullscreenElement.style.opacity = 1;
     }, 100);
     
+    // Check if model-viewer is present and log its state
+    setTimeout(() => {
+        const modelViewer = document.getElementById('modelviewer');
+        if (modelViewer) {
+            console.log('Model-viewer element found');
+            console.log('Model src:', modelViewer.src);
+            console.log('Model loaded:', modelViewer.loaded);
+            
+            // Add event listeners for debugging
+            modelViewer.addEventListener('load', () => {
+                console.log('Model loaded successfully');
+            });
+            modelViewer.addEventListener('error', (error) => {
+                console.error('Model loading error:', error);
+            });
+        } else {
+            console.error('Model-viewer element NOT found');
+        }
+    }, 200);
+    
     // if copntent height is greater than window height, enable scroll
     let contentHeight = contentElement.clientHeight;
     let innerHeight = contentElement.children[0].clientHeight;
@@ -349,6 +369,12 @@ function modelviewer_window_template(item, panel, config) {
                         shadow-intensity="1"
                         environment-image="assets/env_maps/white.jpg"
                         exposure="${item.exposure || 5}"
+                        loading="eager"
+                        reveal="auto"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        onload="console.log('Model loaded:', '${item.model}')"
+                        onerror="console.error('Model failed to load:', '${item.model}')"
                         >`
     if (show_annotations) {
         window_state.assets = item.assets;
